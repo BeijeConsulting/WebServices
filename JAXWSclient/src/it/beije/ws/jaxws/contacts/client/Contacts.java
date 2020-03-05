@@ -3,6 +3,7 @@ package it.beije.ws.jaxws.contacts.client;
 
 import java.util.List;
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
@@ -23,6 +24,21 @@ import javax.xml.ws.ResponseWrapper;
 })
 public interface Contacts {
 
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "addContact", targetNamespace = "http://server.contacts.jaxws.ws.beije.it/", className = "it.beije.ws.jaxws.contacts.client.AddContact")
+    @ResponseWrapper(localName = "addContactResponse", targetNamespace = "http://server.contacts.jaxws.ws.beije.it/", className = "it.beije.ws.jaxws.contacts.client.AddContactResponse")
+    @Action(input = "http://server.contacts.jaxws.ws.beije.it/Contacts/addContactRequest", output = "http://server.contacts.jaxws.ws.beije.it/Contacts/addContactResponse")
+    public boolean addContact(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Contact arg0);
 
     /**
      * 
@@ -47,5 +63,20 @@ public interface Contacts {
     @ResponseWrapper(localName = "getNamesResponse", targetNamespace = "http://server.contacts.jaxws.ws.beije.it/", className = "it.beije.ws.jaxws.contacts.client.GetNamesResponse")
     @Action(input = "http://server.contacts.jaxws.ws.beije.it/Contacts/getNamesRequest", output = "http://server.contacts.jaxws.ws.beije.it/Contacts/getNamesResponse")
     public List<String> getNames();
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns java.util.List<it.beije.ws.jaxws.contacts.client.Contact>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getContactsByName", targetNamespace = "http://server.contacts.jaxws.ws.beije.it/", className = "it.beije.ws.jaxws.contacts.client.GetContactsByName")
+    @ResponseWrapper(localName = "getContactsByNameResponse", targetNamespace = "http://server.contacts.jaxws.ws.beije.it/", className = "it.beije.ws.jaxws.contacts.client.GetContactsByNameResponse")
+    @Action(input = "http://server.contacts.jaxws.ws.beije.it/Contacts/getContactsByNameRequest", output = "http://server.contacts.jaxws.ws.beije.it/Contacts/getContactsByNameResponse")
+    public List<Contact> getContactsByName(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0);
 
 }

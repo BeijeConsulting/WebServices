@@ -20,4 +20,23 @@ public class ContactsImpl implements Contacts {
 		return FakeContacts.contacts;
 	}
 
+	@Override
+	public List<Contact> getContactsByName(String name) {
+		return FakeContacts.findContactsByName(name);
+	}
+
+	@Override
+	public boolean addContact(Contact contact) {
+		System.out.println(contact);
+		
+		if (contact.getName() != null
+				&& contact.getSurname() != null
+				&& contact.getEmail() != null
+				&& contact.getPhoneNumber() != null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }

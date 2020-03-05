@@ -146,4 +146,5 @@ public class Contact {
 		builder.append("phoneNumber : ").append(phoneNumber).append('\n');
 		return builder.toString();
 	}
+
 }

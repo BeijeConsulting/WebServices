@@ -7,6 +7,10 @@ public class Contact {
 	private String email;
 	private String phoneNumber;
 	
+	public Contact() {
+		System.out.println("created instance of Contact");
+	}
+	
 	public Contact(String name, String surname, String email, String phoneNumber) {
 		this.name = name;
 		this.surname = surname;

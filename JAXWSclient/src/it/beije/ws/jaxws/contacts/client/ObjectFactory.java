@@ -25,8 +25,12 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _GetNamesResponse_QNAME = new QName("http://server.contacts.jaxws.ws.beije.it/", "getNamesResponse");
+    private final static QName _AddContactResponse_QNAME = new QName("http://server.contacts.jaxws.ws.beije.it/", "addContactResponse");
     private final static QName _GetContacts_QNAME = new QName("http://server.contacts.jaxws.ws.beije.it/", "getContacts");
+    private final static QName _GetContactsByNameResponse_QNAME = new QName("http://server.contacts.jaxws.ws.beije.it/", "getContactsByNameResponse");
     private final static QName _GetContactsResponse_QNAME = new QName("http://server.contacts.jaxws.ws.beije.it/", "getContactsResponse");
+    private final static QName _AddContact_QNAME = new QName("http://server.contacts.jaxws.ws.beije.it/", "addContact");
+    private final static QName _GetContactsByName_QNAME = new QName("http://server.contacts.jaxws.ws.beije.it/", "getContactsByName");
     private final static QName _GetNames_QNAME = new QName("http://server.contacts.jaxws.ws.beije.it/", "getNames");
 
     /**
@@ -34,6 +38,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link AddContactResponse }
+     * 
+     */
+    public AddContactResponse createAddContactResponse() {
+        return new AddContactResponse();
     }
 
     /**
@@ -45,11 +57,35 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link AddContact }
+     * 
+     */
+    public AddContact createAddContact() {
+        return new AddContact();
+    }
+
+    /**
+     * Create an instance of {@link GetContactsByName }
+     * 
+     */
+    public GetContactsByName createGetContactsByName() {
+        return new GetContactsByName();
+    }
+
+    /**
      * Create an instance of {@link GetNames }
      * 
      */
     public GetNames createGetNames() {
         return new GetNames();
+    }
+
+    /**
+     * Create an instance of {@link GetContactsByNameResponse }
+     * 
+     */
+    public GetContactsByNameResponse createGetContactsByNameResponse() {
+        return new GetContactsByNameResponse();
     }
 
     /**
@@ -86,6 +122,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddContactResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server.contacts.jaxws.ws.beije.it/", name = "addContactResponse")
+    public JAXBElement<AddContactResponse> createAddContactResponse(AddContactResponse value) {
+        return new JAXBElement<AddContactResponse>(_AddContactResponse_QNAME, AddContactResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetContacts }{@code >}}
      * 
      */
@@ -95,12 +140,39 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetContactsByNameResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server.contacts.jaxws.ws.beije.it/", name = "getContactsByNameResponse")
+    public JAXBElement<GetContactsByNameResponse> createGetContactsByNameResponse(GetContactsByNameResponse value) {
+        return new JAXBElement<GetContactsByNameResponse>(_GetContactsByNameResponse_QNAME, GetContactsByNameResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetContactsResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://server.contacts.jaxws.ws.beije.it/", name = "getContactsResponse")
     public JAXBElement<GetContactsResponse> createGetContactsResponse(GetContactsResponse value) {
         return new JAXBElement<GetContactsResponse>(_GetContactsResponse_QNAME, GetContactsResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddContact }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server.contacts.jaxws.ws.beije.it/", name = "addContact")
+    public JAXBElement<AddContact> createAddContact(AddContact value) {
+        return new JAXBElement<AddContact>(_AddContact_QNAME, AddContact.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetContactsByName }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server.contacts.jaxws.ws.beije.it/", name = "getContactsByName")
+    public JAXBElement<GetContactsByName> createGetContactsByName(GetContactsByName value) {
+        return new JAXBElement<GetContactsByName>(_GetContactsByName_QNAME, GetContactsByName.class, null, value);
     }
 
     /**

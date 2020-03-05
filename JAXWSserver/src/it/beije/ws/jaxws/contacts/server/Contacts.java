@@ -20,4 +20,10 @@ public interface Contacts {
     @WebMethod
     List<Contact> getContacts();
     
+    @WebMethod
+    List<Contact> getContactsByName(String name);
+
+    @WebMethod
+    boolean addContact(Contact contact);
+    
 }
