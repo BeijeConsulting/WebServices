@@ -8,6 +8,7 @@ import javax.jws.soap.SOAPBinding.Style;
 @WebService
 @SOAPBinding(style = Style.RPC)
 public interface Calculator {
+	
     @WebMethod
     int add(int a, int b);
  
