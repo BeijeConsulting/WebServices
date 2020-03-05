@@ -15,14 +15,9 @@ public class ContactsImpl implements Contacts {
 		return FakeContacts.nameArray;
 	}
 
-//	@Override
-//	public List<Contact> getContacts() {
-//		return FakeContacts.contacts;
-//	}
-
 	@Override
-	public Contact[] getContacts() {
-		return FakeContacts.contacts.toArray(new Contact[3]);
+	public List<Contact> getContacts() {
+		return FakeContacts.contacts;
 	}
 
 }

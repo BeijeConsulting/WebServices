@@ -10,8 +10,8 @@ public class ContactsClient {
 		
 		System.out.println(contactService.getNames());
 		
-		ContactArray contactList = contactService.getContacts();
-		for (Contact c : contactList.getItem()) {
+		List<Contact> contactList = contactService.getContacts();
+		for (Contact c : contactList) {
 			System.out.println(c);
 		}
 	}

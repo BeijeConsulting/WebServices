@@ -1,12 +1,14 @@
 
 package it.beije.ws.jaxws.contacts.client;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebResult;
 import javax.jws.WebService;
-import javax.jws.soap.SOAPBinding;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.Action;
+import javax.xml.ws.RequestWrapper;
+import javax.xml.ws.ResponseWrapper;
 
 
 /**
@@ -16,7 +18,6 @@ import javax.xml.ws.Action;
  * 
  */
 @WebService(name = "Contacts", targetNamespace = "http://server.contacts.jaxws.ws.beije.it/")
-@SOAPBinding(style = SOAPBinding.Style.RPC)
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -26,21 +27,25 @@ public interface Contacts {
     /**
      * 
      * @return
-     *     returns it.beije.ws.jaxws.contacts.client.StringArray
+     *     returns java.util.List<it.beije.ws.jaxws.contacts.client.Contact>
      */
     @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://server.contacts.jaxws.ws.beije.it/Contacts/getNamesRequest", output = "http://server.contacts.jaxws.ws.beije.it/Contacts/getNamesResponse")
-    public StringArray getNames();
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getContacts", targetNamespace = "http://server.contacts.jaxws.ws.beije.it/", className = "it.beije.ws.jaxws.contacts.client.GetContacts")
+    @ResponseWrapper(localName = "getContactsResponse", targetNamespace = "http://server.contacts.jaxws.ws.beije.it/", className = "it.beije.ws.jaxws.contacts.client.GetContactsResponse")
+    @Action(input = "http://server.contacts.jaxws.ws.beije.it/Contacts/getContactsRequest", output = "http://server.contacts.jaxws.ws.beije.it/Contacts/getContactsResponse")
+    public List<Contact> getContacts();
 
     /**
      * 
      * @return
-     *     returns it.beije.ws.jaxws.contacts.client.ContactArray
+     *     returns java.util.List<java.lang.String>
      */
     @WebMethod
-    @WebResult(partName = "return")
-    @Action(input = "http://server.contacts.jaxws.ws.beije.it/Contacts/getContactsRequest", output = "http://server.contacts.jaxws.ws.beije.it/Contacts/getContactsResponse")
-    public ContactArray getContacts();
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getNames", targetNamespace = "http://server.contacts.jaxws.ws.beije.it/", className = "it.beije.ws.jaxws.contacts.client.GetNames")
+    @ResponseWrapper(localName = "getNamesResponse", targetNamespace = "http://server.contacts.jaxws.ws.beije.it/", className = "it.beije.ws.jaxws.contacts.client.GetNamesResponse")
+    @Action(input = "http://server.contacts.jaxws.ws.beije.it/Contacts/getNamesRequest", output = "http://server.contacts.jaxws.ws.beije.it/Contacts/getNamesResponse")
+    public List<String> getNames();
 
 }

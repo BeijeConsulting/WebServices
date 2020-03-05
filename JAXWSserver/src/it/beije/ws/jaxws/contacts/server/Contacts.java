@@ -11,15 +11,13 @@ import javax.jws.soap.SOAPBinding.Use;
 import it.beije.ws.jaxws.contacts.Contact;
  
 @WebService
-//@SOAPBinding(style = Style.DOCUMENT, use = Use.LITERAL)
-@SOAPBinding(style = Style.RPC)
+@SOAPBinding(style = Style.DOCUMENT, use = Use.LITERAL)
 public interface Contacts {
 	
     @WebMethod
     String[] getNames();
     
     @WebMethod
-    Contact[] getContacts();
-    //List<Contact> getContacts();
+    List<Contact> getContacts();
     
 }
