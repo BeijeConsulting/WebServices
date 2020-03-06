@@ -2,6 +2,7 @@ package it.beije.ws.jaxws.contacts.client;
 
 import java.util.List;
 
+
 public class ContactsClient {
 
 	public static void main(String[] args) {
@@ -22,8 +23,14 @@ public class ContactsClient {
 		for (Contact c : contactListByName) {
 			System.out.println(c);
 			
-			contactService.addContact(c);
 		}
+		
+		Contact newContact = new Contact();
+		newContact.setName("Nicolò");
+		newContact.setSurname("Faina");
+		newContact.setEmail("n.faina@beije.it");
+		newContact.setPhoneNumber("3487777777");
+		System.out.println("add contact... " + contactService.addContact(newContact));
 	}
 	
 }

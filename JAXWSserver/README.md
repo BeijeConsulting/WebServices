@@ -1,5 +1,5 @@
-#it.beije.ws.jaxws.calculator.server.CalcPublisher
-SEMPLICE WS SOAP SERVER CON METODI CALCOLATRICE
+# SEMPLICE WS SOAP SERVER CON METODI CALCOLATRICE
+> $ java it.beije.ws.jaxws.calculator.server.CalcPublisher
 
-#it.beije.ws.jaxws.contacts.server.ContactsPublisher
-WS SOAP SERVER per una rubrica contatti
+# WS SOAP SERVER per una rubrica contatti
+> $ java it.beije.ws.jaxws.contacts.server.ContactsPublisher

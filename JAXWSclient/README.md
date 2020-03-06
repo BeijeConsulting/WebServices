@@ -1,5 +1,5 @@
-#it.beije.ws.jaxws.calculator.client.CalculatorClient
-SEMPLICE CLIENT PER WS SERVER CALCOLATRICE
+# SEMPLICE CLIENT PER WS SERVER CALCOLATRICE
+> $ java it.beije.ws.jaxws.calculator.client.CalculatorClient
 
-#it.beije.ws.jaxws.contacts.client.ContactsClient
-CLIENT per WS rubrica contatti
+# CLIENT per WS rubrica contatti
+> $ java it.beije.ws.jaxws.contacts.client.ContactsClient

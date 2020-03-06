@@ -9,21 +9,25 @@ public class CalculatorImpl implements Calculator {
  
     @Override
     public int add(int a, int b) {
+    	System.out.println("add " + a + " + " + b);
         return a + b;
     }
  
     @Override
     public int subtract(int a, int b) {
+    	System.out.println("subtract " + a + " - " + b);
         return a - b;
     }
  
     @Override
     public int multiply(int a, int b) {
+    	System.out.println("multiply " + a + " * " + b);
         return a * b;
     }
  
     @Override
     public int divide(int a, int b) {
+    	System.out.println("divide " + a + " / " + b);
         return a / b;
     }
  

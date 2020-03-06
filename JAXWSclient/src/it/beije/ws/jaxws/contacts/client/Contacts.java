@@ -43,18 +43,6 @@ public interface Contacts {
     /**
      * 
      * @return
-     *     returns java.util.List<it.beije.ws.jaxws.contacts.client.Contact>
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getContacts", targetNamespace = "http://server.contacts.jaxws.ws.beije.it/", className = "it.beije.ws.jaxws.contacts.client.GetContacts")
-    @ResponseWrapper(localName = "getContactsResponse", targetNamespace = "http://server.contacts.jaxws.ws.beije.it/", className = "it.beije.ws.jaxws.contacts.client.GetContactsResponse")
-    @Action(input = "http://server.contacts.jaxws.ws.beije.it/Contacts/getContactsRequest", output = "http://server.contacts.jaxws.ws.beije.it/Contacts/getContactsResponse")
-    public List<Contact> getContacts();
-
-    /**
-     * 
-     * @return
      *     returns java.util.List<java.lang.String>
      */
     @WebMethod
@@ -63,6 +51,18 @@ public interface Contacts {
     @ResponseWrapper(localName = "getNamesResponse", targetNamespace = "http://server.contacts.jaxws.ws.beije.it/", className = "it.beije.ws.jaxws.contacts.client.GetNamesResponse")
     @Action(input = "http://server.contacts.jaxws.ws.beije.it/Contacts/getNamesRequest", output = "http://server.contacts.jaxws.ws.beije.it/Contacts/getNamesResponse")
     public List<String> getNames();
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<it.beije.ws.jaxws.contacts.client.Contact>
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getContacts", targetNamespace = "http://server.contacts.jaxws.ws.beije.it/", className = "it.beije.ws.jaxws.contacts.client.GetContacts")
+    @ResponseWrapper(localName = "getContactsResponse", targetNamespace = "http://server.contacts.jaxws.ws.beije.it/", className = "it.beije.ws.jaxws.contacts.client.GetContactsResponse")
+    @Action(input = "http://server.contacts.jaxws.ws.beije.it/Contacts/getContactsRequest", output = "http://server.contacts.jaxws.ws.beije.it/Contacts/getContactsResponse")
+    public List<Contact> getContacts();
 
     /**
      * 
