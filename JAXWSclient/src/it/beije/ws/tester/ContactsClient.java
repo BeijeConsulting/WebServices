@@ -1,6 +1,10 @@
-package it.beije.ws.jaxws.contacts.client;
+package it.beije.ws.tester;
 
 import java.util.List;
+
+import it.beije.ws.jaxws.contacts.client.Contact;
+import it.beije.ws.jaxws.contacts.client.Contacts;
+import it.beije.ws.jaxws.contacts.client.ContactsImplService;
 
 
 public class ContactsClient {
